@@ -13,7 +13,7 @@ Package Versions used for Python Scripts
 * NumPy 1.9.2
 * Matplotlib 1.4.3
 
-I haven't checked compatibility with other versions.  I strongly recommend downloading the `Anaconda_. <https://store.continuum.io/cshop/anaconda/>`_. stack.  It will provide you with everything required to run the scripts in this repo.
+I haven't checked compatibility with other versions.  I strongly recommend downloading the `Anaconda <https://store.continuum.io/cshop/anaconda/>`_. stack.  It will provide you with everything required to run the scripts in this repo.
 
 Summary of Scripts
 ------------------
