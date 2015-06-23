@@ -19,4 +19,7 @@ Summary of Scripts
 ------------------
 
 gradient_descent_button
-	This is a Python scripts that shows gradient descent against the plot of f(x) = (x - 5)^2.  You press any key to step through the algorithm or 'q' to quit.
+	This is a Python script that shows gradient descent against the plot of f(x) = (x - 5)^2.  You press enter to step through the algorithm or 'q' to quit (may have to enter it a couple times in a row).
+	
+display_linefit_graphic
+	This is a Python script that displays 4 regression line plots to compare how well a line will fit the data based upon the M and B variables
