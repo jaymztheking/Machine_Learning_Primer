@@ -1,9 +1,9 @@
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as pp
 import numpy as np
 
 #Function I chose to graph, (x-5)^2
 def f(a):
-	return (a-5)*(a-5)
+	return np.square(a-5)
 
 #First derivative of above function for finding slope of gradient line
 def slope(a):
@@ -19,7 +19,7 @@ def main():
 	a = 8 #initial position
 
 	#Initialize Graph
-	fig = plt.figure()
+	fig = pp.figure()
 	chrt = fig.gca()
 	chrt.axis([0,10,0,30])
 	fig.show()
