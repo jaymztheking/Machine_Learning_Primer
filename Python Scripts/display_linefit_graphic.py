@@ -10,6 +10,7 @@ def genBoringScat():
 	for i in range(0,10):
 		x.append(random.uniform(1,10))
 		y.append(x[-1]+random.normalvariate(0,1))
+		#if I had to do it over I might instead use scikit-learn's sklearn.datasets.make_regression function
 	return [x, y]
 	
 #Formats individual charts and returns error (sum of squares)
