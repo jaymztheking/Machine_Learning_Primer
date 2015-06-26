@@ -1,6 +1,7 @@
 import csv
 import sklearn.linear_model as sk
 import numpy as np
+import matplotlib.pyplot as pp
 
 def readData(data):
 	a = [[],[]]
@@ -14,28 +15,39 @@ def readData(data):
 def matrixify(a):
 	matrix = []
 	for i in a:
-		matrix.append([i])
+		matrix.append([i, 1]) #i is x1, 1 is x0
 	return matrix
+	
+def dematrixify(a):
+	array = []
+	for i in a:
+		array.append(i[0])
+	return array
 	
 def main():
 	a = readData('movie_data.csv')
-	#Each x value needs to be in an array/matrix
-	x = matrixify(a[0])
-	y = np.array()
-	reg = sk.SGDRegressor(loss="squared_loss", penalty="none")
-	print x
+	x = matrixify(a[0]) #SGDRegressor needs independent variables in an individual array/matrix
+	y = a[1] #Output doesn't have to be in individual arrays
+	reg = sk.SGDRegressor(loss='squared_loss', penalty='none', n_iter=1000, fit_intercept=False)
 	reg.fit(x,y)
-	print reg.predict([10])
-	print reg.predict([0])
-	# scaX = []
-	# scatX = matrixify(np.arange(0,11))
-	# for i in scatX:
-		# scaX.append([i])
-	# scatY = reg.predict(scatX)
-	# print x
-	# print y
-	# print scatX
-	# print scatY
+	
+	#Make Scatter Plot with scikit's "answers"
+	xaxis = matrixify(np.arange(0,11))
+	yaxis = reg.predict(xaxis)
+	xaxis = dematrixify(xaxis)
+
+	fig = pp.figure()
+	ax = fig.gca()
+	ax.axis([0,10,0,10])
+	ax.set_xlabel('Number of Explosions in Film')
+	ax.set_ylabel('James\' Rating of Film')
+	ax.set_title('Scikit Found M = '+str(reg.coef_[0])+'and B = '+str(reg.coef_[1]))
+	ax.plot(a[0],a[1],'o')
+	ax.plot(xaxis, yaxis)
+	fig.show()
+	raw_input(' ')
+	
+	
 
 if __name__ == '__main__':
 	main()
