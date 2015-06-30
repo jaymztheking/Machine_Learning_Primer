@@ -14,6 +14,7 @@ Package Versions used for Python Scripts
 * Python 2.7.9
 * NumPy 1.9.2
 * Matplotlib 1.4.3
+* Scikit-Learn 0.15.2
 
 I haven't checked compatibility with other versions.  I strongly recommend downloading the `Anaconda <https://store.continuum.io/cshop/anaconda/>`_ stack.  It will provide you with everything required to run the scripts in this repo.
 
